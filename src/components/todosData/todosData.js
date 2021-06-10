@@ -12,7 +12,7 @@ const todosData = [
   {
     id: 2,
     description: 'Milk',
-    completed: true,
+    completed: false,
   },
   {
     id: 3,

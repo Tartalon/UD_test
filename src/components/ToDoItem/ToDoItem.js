@@ -1,10 +1,27 @@
 import React from 'react';
 
 const ToDoItem = props => {
+  const resolvedClass = {
+    textDecoration: 'line-through',
+  };
+
   return (
     <li className="list__item">
-      <h2 className="item__title">{props.description}</h2>
-      <input type="checkbox" defaultChecked={props.completed} />
+      <div className="title-wrapper">
+        <h2
+          className="item__title"
+          style={props.completed === true ? resolvedClass : {}}
+        >
+          {props.description}
+        </h2>
+      </div>
+      <div className="input-wrapper">
+        <input
+          type="checkbox"
+          defaultChecked={props.completed}
+          onChange={props.handleChange}
+        />
+      </div>
     </li>
   );
 };
